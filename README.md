@@ -16,19 +16,6 @@ Features
 
      Auto-device discovery
 
-File Structure 
-Copy
-
-broadlink-ir-controller/
-├── .env.example              # Environment template
-├── requirements.txt          # Python dependencies
-├── learn_ir.py               # Learn IR commands
-├── send_ir.py                # Send IR commands
-├── webserver.py              # HTTP server (Flask + Waitress)
-├── commands/                 # Pre-learned IR codes
-│   ├── ac_power.hex          # Example IR code
-│   └── ...                   # Add your own .hex files
-└── README.md                 # This documentation
 
 Requirements 
 
@@ -60,7 +47,9 @@ Copy
 
 # Broadlink Device
 BROADLINK_IP=192.168.0.0 # Enter the IP Address of BroadLink
+
 BROADLINK_MAC=a1b2c3d4e5f6 # Enter the Mac Address of Broadlink
+
 BROADLINK_DEVTYPE=0x2712  # RM mini 3
 
 Device Types:
