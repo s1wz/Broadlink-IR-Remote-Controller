@@ -1,22 +1,22 @@
-Broadlink IR Controller 🎮
+Broadlink IR Controller 
 
 Control your Broadlink IR devices (AC, TV, etc.) via Python scripts, HTTP API, or Stream Deck. Perfect for home automation!
 
 Python Version
 License: MIT
-Features ✨
+Features 
 
-    📡 Learn and save IR codes from any remote
+     Learn and save IR codes from any remote
 
-    🔌 Send commands via CLI or HTTP API
+     Send commands via CLI or HTTP API
 
-    🎚️ Stream Deck integration
+     Stream Deck integration
 
-    🌐 Local web server (no cloud dependencies)
+     Local web server (no cloud dependencies)
 
-    🔄 Auto-device discovery
+     Auto-device discovery
 
-File Structure 📂
+File Structure 
 Copy
 
 broadlink-ir-controller/
@@ -30,7 +30,7 @@ broadlink-ir-controller/
 │   └── ...                   # Add your own .hex files
 └── README.md                 # This documentation
 
-Requirements 🛠️
+Requirements 
 
     Python 3.8+
 
@@ -38,12 +38,12 @@ Requirements 🛠️
 
     Broadlink App (for initial setup)
 
-Installation ⚡
+Installation 
 bash
 Copy
 
 # Clone repository
-git clone https://github.com/yourusername/broadlink-ir-controller.git
+git clone https://github.com/s1wz/Broadlink-IR-Remote-Controller.git
 cd broadlink-ir-controller
 
 # Install dependencies
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 # Copy and edit environment file
 cp .env.example .env
 
-Configuration ⚙️
+Configuration 
 
 Edit .env:
 ini
@@ -67,7 +67,7 @@ BROADLINK_DEVTYPE=0x2712  # RM mini 3
 PORT=5000
 HOST=0.0.0.0
 
-Usage 🚀
+Usage 
 1. Learn IR Codes
 bash
 Copy
@@ -93,7 +93,7 @@ API Endpoints:
 
     GET /command/<cmd> - Send IR command
 
-Stream Deck Integration 🎛️
+Stream Deck Integration 
 
     Install Web Request Plugin
 
@@ -108,13 +108,16 @@ Stream Deck Integration 🎛️
     Power	/command/power
     Temp+	/command/temp_up
 
-Troubleshooting 🔧
+Troubleshooting 
 Issue	Solution
 "Device not found"	Check Wi-Fi connection
 "IR file missing"	Verify .hex file exists in /commands
 Connection timeout	Restart webserver.py
-License 📜
 
-MIT License - See LICENSE
+Security Note:
 
-This structure provides clear documentation while keeping technical details organized. Would you like me to create any specific implementation guides or additional examples? 😊
+    Only expose this server on your local network
+
+    Add authentication if exposing to the internet
+
+    Use HTTPS in production environments
