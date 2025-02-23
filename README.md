@@ -1,41 +1,120 @@
-A lightweight Python toolkit to control Broadlink IR devices (RM mini, RM Pro) for home automation. Learn and send IR commands, integrate with Stream Deck, or trigger commands via a local web server. Perfect for automating AC, TV, or other IR-controlled devices.
+Broadlink IR Controller 🎮
 
-Features:
+Control your Broadlink IR devices (AC, TV, etc.) via Python scripts, HTTP API, or Stream Deck. Perfect for home automation!
 
-    Learn and save IR codes from any remote.
+Python Version
+License: MIT
+Features ✨
 
-    Send IR commands via CLI or HTTP requests.
+    📡 Learn and save IR codes from any remote
 
-    Stream Deck integration for one-click control.
+    🔌 Send commands via CLI or HTTP API
 
-    No cloud dependencies (runs locally).
+    🎚️ Stream Deck integration
 
-1. learn_ir.py (Learn IR Codes)
-2. send_ir.py (Send IR Commands)
+    🌐 Local web server (no cloud dependencies)
 
-## Prerequisites
-- Python 3.6+
-- Broadlink device (RM mini/RM Pro) connected to your Wi-Fi.
-- `broadlink` library: `pip install broadlink`.
+    🔄 Auto-device discovery
 
-## Usage
-1. **Learn an IR code**:
-   ```bash
-   python learn_ir.py ac_power.hex
-   
-2. **Send an IR code**:
-   ```bash
-   python send_ir.py ac_power.hex
+File Structure 📂
+Copy
 
-3. Steam Deck Intergration:
-      Install the Stream Deck Web Request Plugin.
+broadlink-ir-controller/
+├── .env.example              # Environment template
+├── requirements.txt          # Python dependencies
+├── learn_ir.py               # Learn IR commands
+├── send_ir.py                # Send IR commands
+├── webserver.py              # HTTP server (Flask + Waitress)
+├── commands/                 # Pre-learned IR codes
+│   ├── ac_power.hex          # Example IR code
+│   └── ...                   # Add your own .hex files
+└── README.md                 # This documentation
 
-    Create buttons with the URL http://localhost:5000/ac/<command> (see web_server.py).
-   
-Security Note:
+Requirements 🛠️
 
-    Only expose this server on your local network
+    Python 3.8+
 
-    Add authentication if exposing to the internet
+    Broadlink device (RM mini/RM Pro)
 
-    Use HTTPS in production environments
+    Broadlink App (for initial setup)
+
+Installation ⚡
+bash
+Copy
+
+# Clone repository
+git clone https://github.com/yourusername/broadlink-ir-controller.git
+cd broadlink-ir-controller
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Copy and edit environment file
+cp .env.example .env
+
+Configuration ⚙️
+
+Edit .env:
+ini
+Copy
+
+# Broadlink Device
+BROADLINK_IP=192.168.3.8
+BROADLINK_MAC=a043b0705e82
+BROADLINK_DEVTYPE=0x2712  # RM mini 3
+
+# Web Server
+PORT=5000
+HOST=0.0.0.0
+
+Usage 🚀
+1. Learn IR Codes
+bash
+Copy
+
+python learn_ir.py commands/ac_power.hex
+
+Point your remote at the Broadlink device when prompted
+2. Send IR Commands
+bash
+Copy
+
+python send_ir.py commands/ac_power.hex
+
+3. Start Web Server
+bash
+Copy
+
+python webserver.py
+
+API Endpoints:
+
+    GET /health - Service status
+
+    GET /command/<cmd> - Send IR command
+
+Stream Deck Integration 🎛️
+
+    Install Web Request Plugin
+
+    Create buttons with:
+    Copy
+
+    URL: http://localhost:5000/command/power
+    Method: GET
+
+    Map commands:
+    Button	Command
+    Power	/command/power
+    Temp+	/command/temp_up
+
+Troubleshooting 🔧
+Issue	Solution
+"Device not found"	Check Wi-Fi connection
+"IR file missing"	Verify .hex file exists in /commands
+Connection timeout	Restart webserver.py
+License 📜
+
+MIT License - See LICENSE
+
+This structure provides clear documentation while keeping technical details organized. Would you like me to create any specific implementation guides or additional examples? 😊
