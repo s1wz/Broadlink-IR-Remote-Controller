@@ -67,6 +67,9 @@ BROADLINK_DEVTYPE=0x2712  # RM mini 3
 | SP2           | 0x2719        | 10009             | Smart plug                      |
 | MP1           | 0x4EB5        | 20149             | Multi-outlet power strip        |
 
+
+```markdown 
+
 # Web Server
 PORT=5000
 HOST=0.0.0.0
