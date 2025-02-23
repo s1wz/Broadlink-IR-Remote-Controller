@@ -52,14 +52,19 @@ BROADLINK_MAC=a1b2c3d4e5f6 # Enter the Mac Address of Broadlink
 
 BROADLINK_DEVTYPE=0x2712  # RM mini 3
 
-Device Types:
-Device Name	devtype (Hex)	devtype (Decimal)	Notes
+## Supported Device Types
+```plaintext
+Device Name	devtype (Hex)	devtype (Decimal)	Description
 RM mini 3	0x2712	10002	Most popular IR controller
 RM4 mini	0x5F36	24374	Updated RM mini
 RM4 Pro	0x51BC	20924	IR + RF support
 RM Pro+	0x27C2	10178	Older Pro model
 RM3 mini	0x2737	10039	
-RM3 Pro	0x2783	10115
+RM3 Pro	0x2783	10115	
+SP1	0x2711	10001	Smart plug
+SP2	0x2719	10009	Smart plug
+MP1	0x4EB5	20149	Multi-outlet power strip
+```
 
 # Web Server
 PORT=5000
