@@ -59,9 +59,18 @@ ini
 Copy
 
 # Broadlink Device
-BROADLINK_IP=192.168.3.8
-BROADLINK_MAC=a043b0705e82
+BROADLINK_IP=192.168.0.0 # Enter the IP Address of BroadLink
+BROADLINK_MAC=a1b2c3d4e5f6 # Enter the Mac Address of Broadlink
 BROADLINK_DEVTYPE=0x2712  # RM mini 3
+
+Device Types:
+Device Name	devtype (Hex)	devtype (Decimal)	Notes
+RM mini 3	0x2712	10002	Most popular IR controller
+RM4 mini	0x5F36	24374	Updated RM mini
+RM4 Pro	0x51BC	20924	IR + RF support
+RM Pro+	0x27C2	10178	Older Pro model
+RM3 mini	0x2737	10039	
+RM3 Pro	0x2783	10115
 
 # Web Server
 PORT=5000
