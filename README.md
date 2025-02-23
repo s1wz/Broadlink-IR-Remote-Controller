@@ -27,8 +27,15 @@ Features:
    ```bash
    python send_ir.py ac_power.hex
 
-Stream Deck Integration
-
-    Install the Stream Deck Web Request Plugin.
+3. Steam Deck Intergration:
+      Install the Stream Deck Web Request Plugin.
 
     Create buttons with the URL http://localhost:5000/ac/<command> (see web_server.py).
+   
+Security Note:
+
+    Only expose this server on your local network
+
+    Add authentication if exposing to the internet
+
+    Use HTTPS in production environments
